@@ -7,10 +7,46 @@
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; {year}</copyright>
-    <lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://RickyLuo1749.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CRM</title>
+      <link>https://RickyLuo1749.github.io/tags/crm/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://RickyLuo1749.github.io/tags/crm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>專案管理</title>
+      <link>https://RickyLuo1749.github.io/tags/%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://RickyLuo1749.github.io/tags/%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>機器學習</title>
+      <link>https://RickyLuo1749.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://RickyLuo1749.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>網路行銷</title>
+      <link>https://RickyLuo1749.github.io/tags/%E7%B6%B2%E8%B7%AF%E8%A1%8C%E9%8A%B7/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://RickyLuo1749.github.io/tags/%E7%B6%B2%E8%B7%AF%E8%A1%8C%E9%8A%B7/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Source Themes</title>
@@ -18,42 +54,6 @@
       <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://RickyLuo1749.github.io/tags/source-themes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
-      <link>https://RickyLuo1749.github.io/tags/deep-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://RickyLuo1749.github.io/tags/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Demo</title>
-      <link>https://RickyLuo1749.github.io/tags/demo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://RickyLuo1749.github.io/tags/demo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>human</title>
-      <link>https://RickyLuo1749.github.io/tags/human/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://RickyLuo1749.github.io/tags/human/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>robotics</title>
-      <link>https://RickyLuo1749.github.io/tags/robotics/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://RickyLuo1749.github.io/tags/robotics/</guid>
       <description></description>
     </item>
     

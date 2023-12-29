@@ -7,68 +7,272 @@
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; {year}</copyright>
-    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://RickyLuo1749.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Artificial Intelligence</title>
-      <link>https://RickyLuo1749.github.io/project/artificial-intelligence/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>一頁式會員Dashboard</title>
+      <link>https://RickyLuo1749.github.io/project/crm/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://RickyLuo1749.github.io/project/artificial-intelligence/</guid>
-      <description></description>
-    </item>
+      <guid>https://RickyLuo1749.github.io/project/crm/</guid>
+      <description>&lt;h3 id=&#34;目標&#34;&gt;目標&lt;/h3&gt;
+&lt;p&gt;製作出一頁式會員Dashboard，協助客服人員及銷售人員更好的進行客戶管理&lt;/p&gt;
+&lt;h3 id=&#34;執行方式&#34;&gt;執行方式&lt;/h3&gt;
+&lt;p&gt;偕同1位全端工程師，進行各部門需求訪談，並盤點會員及消費相關資料表進型RFM分析。Dashboard Wireframe製作，以及產品測試驗收。&lt;/p&gt;
+&lt;h3 id=&#34;成果&#34;&gt;成果&lt;/h3&gt;
+&lt;p&gt;3個月完成開發並上線，產出一頁式CRM Dashboard。&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+  
+
+
+&lt;div class=&#34;gallery&#34;&gt;
+
+  
+  
+  
+  
     
-    <item>
-      <title>Deep Learning</title>
-      <link>https://RickyLuo1749.github.io/project/deep-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://RickyLuo1749.github.io/project/deep-learning/</guid>
-      <description></description>
-    </item>
     
-    <item>
-      <title>External Project</title>
-      <link>https://RickyLuo1749.github.io/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://RickyLuo1749.github.io/project/external-project/</guid>
-      <description></description>
-    </item>
     
-    <item>
-      <title>Internal Project</title>
-      <link>https://RickyLuo1749.github.io/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://RickyLuo1749.github.io/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm1.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm1_hubd04edc621a3d9b98460b168b6d8e219_962876_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm2.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm2_hu9c0ccb2d73076e33fe710cbc51608591_89340_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm3.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm3_hud49d950133b8a207f978f171d15910d5_212169_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+
+  
+&lt;/div&gt;
 </description>
     </item>
     
     <item>
-      <title>Robotics</title>
-      <link>https://RickyLuo1749.github.io/project/robotics/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>電商平台APP專案管理</title>
+      <link>https://RickyLuo1749.github.io/project/app/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://RickyLuo1749.github.io/project/robotics/</guid>
-      <description></description>
+      <guid>https://RickyLuo1749.github.io/project/app/</guid>
+      <description>&lt;h3 id=&#34;目標&#34;&gt;目標&lt;/h3&gt;
+&lt;p&gt;開發既有電商平台之APP，包含會員功能、訂單查詢、商品顯示、購物流程。&lt;/p&gt;
+&lt;h3 id=&#34;執行方式&#34;&gt;執行方式&lt;/h3&gt;
+&lt;p&gt;偕同1位UI/UX設計師、1位前端工程師、1位後端工程師，盤點既有網站架構、功能邏輯及頁面結構，進行工作任務拆解、任務時程安排及產品驗收。&lt;/p&gt;
+&lt;h3 id=&#34;成果&#34;&gt;成果&lt;/h3&gt;
+&lt;p&gt;於開發後6個月完成上線，並於上線第一個月達成23%用戶轉移。&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+  
+
+
+&lt;div class=&#34;gallery&#34;&gt;
+
+  
+  
+  
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/app/gallery/app1.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/app/gallery/app1_huc92df6a8d09b49e8a90af5542e907266_844230_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/app/gallery/app2.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/app/gallery/app2_hu7ae3ba07a5913e5110c3057aa9ee0e19_909245_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/app/gallery/app3.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/app/gallery/app3_hua58fb8d6d022daf813eadd8cdb2df440_301723_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+
+  
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
-      <title>Skin Cancer AI</title>
-      <link>https://RickyLuo1749.github.io/project/skin-cancer-ai/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>美國二手車智慧估價系統</title>
+      <link>https://RickyLuo1749.github.io/project/us-used-cars/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://RickyLuo1749.github.io/project/skin-cancer-ai/</guid>
-      <description></description>
+      <guid>https://RickyLuo1749.github.io/project/us-used-cars/</guid>
+      <description>&lt;h3 id=&#34;目標&#34;&gt;目標&lt;/h3&gt;
+&lt;p&gt;本專案期望透過AI人工智慧大數據估價模型，彙整各品牌、車型車系最近幾年的交易數據，預測出最佳價位，提供給經銷商作為定價參考。&lt;/p&gt;
+&lt;h3 id=&#34;執行方式&#34;&gt;執行方式&lt;/h3&gt;
+&lt;p&gt;資料來源：&lt;a href=&#34;https://www.kaggle.com/datasets/ananaymital/us-used-cars-dataset&#34;&gt;Kaggle&lt;/a&gt;，約300萬筆、66個欄位，篩選23個欄位進行空值處理、資料型態轉換，接著利用Scikit-learn進行機器學習，模型挑選及優化。&lt;/p&gt;
+&lt;h3 id=&#34;成果&#34;&gt;成果&lt;/h3&gt;
+&lt;p&gt;經過多種模型訓練後，將準確度大於50%的model列出來，其中準確度超過7成有符合我們期待的模型有兩個，其中ExtraTrees 因為overfitting，因為我們選XGBOOST作為我們的預測模型，在誤差範圍1%內，模型預測準確度為76.67%。&lt;/p&gt;
+&lt;p&gt;接著使用RFE逐步法選了34個欄位，訓練時間有大幅縮短，且準確率也不差，但跑RFE加上XGBOOST的時間會遠大於單一跑XGBOOST，以及使用PCA降維，但不符合我們準確率7成的預期&lt;/p&gt;
+&lt;p&gt;同時以價格區間前25%及後25%進行決策樹分析，找出影響價格的關鍵因子為里程數及馬力。&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+  
+
+
+&lt;div class=&#34;gallery&#34;&gt;
+
+  
+  
+  
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/1.%E8%B3%87%E6%96%99%E8%99%95%E7%90%86.jpg&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/1.%E8%B3%87%E6%96%99%E8%99%95%E7%90%86_hu4cae920672e4fa94a53157b7304d8fbe_105352_0x190_resize_q90_lanczos.jpg&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/2.%E6%A8%A1%E5%9E%8B%E8%A8%93%E7%B7%B4.jpg&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/2.%E6%A8%A1%E5%9E%8B%E8%A8%93%E7%B7%B4_hu4cae920672e4fa94a53157b7304d8fbe_147768_0x190_resize_q90_lanczos.jpg&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/3.%E7%89%B9%E5%BE%B5%E5%B7%A5%E7%A8%8B.jpg&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/3.%E7%89%B9%E5%BE%B5%E5%B7%A5%E7%A8%8B_hu4cae920672e4fa94a53157b7304d8fbe_152763_0x190_resize_q90_lanczos.jpg&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/4.%E6%B1%BA%E7%AD%96%E6%A8%B9.jpg&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/4.%E6%B1%BA%E7%AD%96%E6%A8%B9_hu4cae920672e4fa94a53157b7304d8fbe_120968_0x190_resize_q90_lanczos.jpg&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+
+  
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>新產品線建立</title>
+      <link>https://RickyLuo1749.github.io/project/marketing/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://RickyLuo1749.github.io/project/marketing/</guid>
+      <description>&lt;h3 id=&#34;目標&#34;&gt;目標&lt;/h3&gt;
+&lt;p&gt;在自有官網平台負責新產品線建立、行銷、營運&lt;/p&gt;
+&lt;h3 id=&#34;執行方式&#34;&gt;執行方式&lt;/h3&gt;
+&lt;p&gt;負責規劃市場定位、廠商開發、行銷素材取得及文案撰寫，並進行網站Landing page規劃、商品上架，以及後續社群經營、廣到投放、部落客合作等行銷活動規劃執行&lt;/p&gt;
+&lt;h3 id=&#34;成果&#34;&gt;成果&lt;/h3&gt;
+&lt;p&gt;年營業額達總營業額15.7%。&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+  
+
+
+&lt;div class=&#34;gallery&#34;&gt;
+
+  
+  
+  
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/marketing/gallery/markt1.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/marketing/gallery/markt1_hu2039335f62e1d1d5646a19daa4e7633e_1069110_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/marketing/gallery/markt2.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/marketing/gallery/markt2_hu882ea11ebb86f81c32f4134c96e2076a_8122286_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/marketing/gallery/markt3.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/marketing/gallery/markt3_hu25741e05e38f1a0d80175f34e6666839_559936_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+
+  
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

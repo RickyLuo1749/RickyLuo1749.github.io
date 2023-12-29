@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CRM on Ricky個人網站</title>
+    <link>https://RickyLuo1749.github.io/tags/crm/</link>
+    <description>Recent content in CRM on Ricky個人網站</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; {year}</copyright>
+    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://RickyLuo1749.github.io/tags/crm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一頁式會員Dashboard</title>
+      <link>https://RickyLuo1749.github.io/project/crm/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://RickyLuo1749.github.io/project/crm/</guid>
+      <description>&lt;h3 id=&#34;目標&#34;&gt;目標&lt;/h3&gt;
+&lt;p&gt;製作出一頁式會員Dashboard，協助客服人員及銷售人員更好的進行客戶管理&lt;/p&gt;
+&lt;h3 id=&#34;執行方式&#34;&gt;執行方式&lt;/h3&gt;
+&lt;p&gt;偕同1位全端工程師，進行各部門需求訪談，並盤點會員及消費相關資料表進型RFM分析。Dashboard Wireframe製作，以及產品測試驗收。&lt;/p&gt;
+&lt;h3 id=&#34;成果&#34;&gt;成果&lt;/h3&gt;
+&lt;p&gt;3個月完成開發並上線，產出一頁式CRM Dashboard。&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+  
+
+
+&lt;div class=&#34;gallery&#34;&gt;
+
+  
+  
+  
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm1.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm1_hubd04edc621a3d9b98460b168b6d8e219_962876_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm2.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm2_hu9c0ccb2d73076e33fe710cbc51608591_89340_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm3.png&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/crm/gallery/crm3_hud49d950133b8a207f978f171d15910d5_212169_0x190_resize_lanczos_3.png&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+
+  
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

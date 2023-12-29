@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>機器學習 on Ricky個人網站</title>
+    <link>https://RickyLuo1749.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</link>
+    <description>Recent content in 機器學習 on Ricky個人網站</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; {year}</copyright>
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://RickyLuo1749.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>美國二手車智慧估價系統</title>
+      <link>https://RickyLuo1749.github.io/project/us-used-cars/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://RickyLuo1749.github.io/project/us-used-cars/</guid>
+      <description>&lt;h3 id=&#34;目標&#34;&gt;目標&lt;/h3&gt;
+&lt;p&gt;本專案期望透過AI人工智慧大數據估價模型，彙整各品牌、車型車系最近幾年的交易數據，預測出最佳價位，提供給經銷商作為定價參考。&lt;/p&gt;
+&lt;h3 id=&#34;執行方式&#34;&gt;執行方式&lt;/h3&gt;
+&lt;p&gt;資料來源：&lt;a href=&#34;https://www.kaggle.com/datasets/ananaymital/us-used-cars-dataset&#34;&gt;Kaggle&lt;/a&gt;，約300萬筆、66個欄位，篩選23個欄位進行空值處理、資料型態轉換，接著利用Scikit-learn進行機器學習，模型挑選及優化。&lt;/p&gt;
+&lt;h3 id=&#34;成果&#34;&gt;成果&lt;/h3&gt;
+&lt;p&gt;經過多種模型訓練後，將準確度大於50%的model列出來，其中準確度超過7成有符合我們期待的模型有兩個，其中ExtraTrees 因為overfitting，因為我們選XGBOOST作為我們的預測模型，在誤差範圍1%內，模型預測準確度為76.67%。&lt;/p&gt;
+&lt;p&gt;接著使用RFE逐步法選了34個欄位，訓練時間有大幅縮短，且準確率也不差，但跑RFE加上XGBOOST的時間會遠大於單一跑XGBOOST，以及使用PCA降維，但不符合我們準確率7成的預期&lt;/p&gt;
+&lt;p&gt;同時以價格區間前25%及後25%進行決策樹分析，找出影響價格的關鍵因子為里程數及馬力。&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+  
+
+
+&lt;div class=&#34;gallery&#34;&gt;
+
+  
+  
+  
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/1.%E8%B3%87%E6%96%99%E8%99%95%E7%90%86.jpg&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/1.%E8%B3%87%E6%96%99%E8%99%95%E7%90%86_hu4cae920672e4fa94a53157b7304d8fbe_105352_0x190_resize_q90_lanczos.jpg&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/2.%E6%A8%A1%E5%9E%8B%E8%A8%93%E7%B7%B4.jpg&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/2.%E6%A8%A1%E5%9E%8B%E8%A8%93%E7%B7%B4_hu4cae920672e4fa94a53157b7304d8fbe_147768_0x190_resize_q90_lanczos.jpg&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/3.%E7%89%B9%E5%BE%B5%E5%B7%A5%E7%A8%8B.jpg&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/3.%E7%89%B9%E5%BE%B5%E5%B7%A5%E7%A8%8B_hu4cae920672e4fa94a53157b7304d8fbe_152763_0x190_resize_q90_lanczos.jpg&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/4.%E6%B1%BA%E7%AD%96%E6%A8%B9.jpg&#34; &gt;
+  &lt;img src=&#34;https://RickyLuo1749.github.io/project/us-used-cars/gallery/4.%E6%B1%BA%E7%AD%96%E6%A8%B9_hu4cae920672e4fa94a53157b7304d8fbe_120968_0x190_resize_q90_lanczos.jpg&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+
+  
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
