@@ -65,5 +65,59 @@
       alt="Logo"
     />
   </footer>
+  <script>
+    const form = document.getElementById('uploadForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const loading = document.getElementById('loading');
+    const responseDiv = document.getElementById('responseArea');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      const file = document.getElementById('imageInput').files[0];
+      const description = document.getElementById('description').value.trim();
+      if (!file || !description) {
+        alert('請選擇圖片並輸入說明');
+        return;
+      }
+  
+      // 停用按鈕並顯示 loading
+      submitBtn.disabled = true;
+      loading.style.display = 'block';
+      responseDiv.textContent = '';
+  
+      const formData = new FormData();
+      formData.append('image', file);
+      formData.append('description', description);
+  
+      try {
+        const res = await fetch(
+          'https://hook.eu2.make.com/gswc2ism43y44z3p6rcpkqk325b23u4v',
+          {
+            method: 'POST',
+            body: formData,
+          }
+        );
+  
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  
+        // 如果回傳 JSON：
+        let result;
+        const contentType = res.headers.get('Content-Type') || '';
+        if (contentType.includes('application/json')) {
+          result = await res.json();
+          responseDiv.textContent = '後台回應 (JSON)：\n' + JSON.stringify(result, null, 2);
+        } else {
+          const text = await res.text();
+          responseDiv.textContent = '後台回應 (Text)：\n' + text;
+        }
+      } catch (err) {
+        responseDiv.textContent = '錯誤：' + err.message;
+      } finally {
+        submitBtn.disabled = false;
+        loading.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
