@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分析結果-神農之手</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body class="bg-[url('img/back4.svg')] bg-cover bg-no-repeat bg-center min-h-screen flex flex-col items-center p-4 mt-4">
+  <img src="img/Agricultural Designer.png" alt="">
+    
+  <div class="bg-black bg-opacity-50 m-2 w-full max-w-3xl mx-aut flex flex-col items-center p-10">
+    <h1 class="text-5xl leading-normal sm:leading-normal sm:text-6xl font-extrabold text-center text-gray-100"
+        style="font-family:'LXGW WenKai Mono TC', monospace; 
+        text-shadow:
+        0px 0px 4px rgb(22, 22, 1),
+        0px 0px 8px rgba(68, 68, 2, 0.829),
+        0px 0px 8px rgba(255, 255, 0, 0.925);">
+        農業設計師
+    </h1>
+
+    
+    <p class="text-xl sm:text-2xl leading-normal sm:leading-normal sm:text-3xl text-center text-gray-200 m-2 drop-shadow-lg "
+        style="font-family:'LXGW WenKai Mono TC', monospace;">
+        用設計說故事，讓農業成為美學<br>
+        Design tells the story; farming becomes art.
+
+    </p>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const display = document.getElementById('palmFeatureDisplay');
+        const palmFeature = sessionStorage.getItem('palmFeature');
+        if (palmFeature) {
+          display.textContent = palmFeature;
+        } else {
+          display.textContent = '未取得掌紋特徵資料';
+        }
+      });
+    </script>
+    <h3 class="w-full text-left text-2xl leading-normal sm:leading-normal sm:text-3xl text-gray-200 font-extrabold mt-10">
+      掌紋特徵：
+    </h3>
+    <div id="palmFeatureDisplay" class="text-xl leading-normal sm:leading-normal sm:text-2xl text-gray-200 "></div>
+   
+    <h3 class="w-full text-left text-2xl leading-normal sm:leading-normal sm:text-3xl text-gray-200 font-extrabold mt-10">
+      角色說明：
+    </h3>
+    <p class="text-xl leading-normal sm:leading-normal sm:text-2xl text-gray-200 ">你具備美感與整合力，擅長將農場規劃成充滿故事與吸引力的空間。你善於打造品牌、規劃體驗，讓農業不只是耕作，更是參與和感受的舞台。</p>
+    
+    <h3 class="w-full text-left text-2xl leading-normal sm:leading-normal sm:text-3xl text-gray-200 font-extrabold mt-10">
+      適合領域：
+    </h3>
+    <ul class="list-disc list-inside w-full text-left text-xl leading-normal sm:leading-normal sm:text-2xl text-gray-200 ">
+      <li>農場體驗設計、品牌規劃</li>
+      <li>食農教育、市集行銷</li>
+      <li>風格農產設計與農村美學</li>
+    </ul>
+  
+   
+  </div>
+  <button
+  id="retryBtn"
+  class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg mt-6"
+  onclick="window.location.href='index.html'"
+  >
+  重新測驗
+  </button>
+  <p class="text-base leading-normal sm:leading-normal sm:text-xl text-center text-gray-200 m-10 ">
+    財團法人農業科技研究院|產業分析組
+</p>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神農之手-AI掌紋判讀</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body class="bg-[url('img/back4.svg')] bg-cover bg-no-repeat bg-center min-h-screen flex flex-col items-center p-4 mt-10">
+    <h1 class="text-5xl leading-normal sm:leading-normal sm:text-6xl font-extrabold text-center text-gray-100 font-extrabold"
+        style="font-family:'LXGW WenKai Mono TC', monospace; 
+        text-shadow:
+        0px 0px 4px rgb(22, 22, 1),
+        0px 0px 8px rgba(68, 68, 2, 0.829),
+        0px 0px 8px rgba(255, 255, 0, 0.925);">
+        神農之手<br>AI掌紋判讀
+    </h1>
+    <h2 class="text-2xl sm:text-3xl leading-normal sm:leading-normal sm:text-2xl text-center text-gray-200 m-2 drop-shadow-lg "
+        style="font-family:'LXGW WenKai Mono TC', monospace;">
+        從掌紋看你是哪類農業達人？
+    </h2>
+    <div class="bg-black bg-opacity-50 m-2 w-full max-w-3xl mx-auto flex flex-col items-center p-10">
+
+        <p class="text-3xl leading-normal sm:leading-normal sm:text-4xl text-center text-gray-200 ">
+            一張照片，揭開你的農業達人之路，探索屬於你的耕耘潛力
+        </p>
+
+        <input
+        type="text"
+        id="nameInput"
+        placeholder="請輸入您的姓名"
+        class="w-full mb-4 m-10 p-2 rounded bg-gray-200 text-gray-800 focus:outline-none"
+        required
+        />
+        <input
+        type="file"
+        id="cameraInput"
+        accept="image/*"
+        capture="environment"
+        class="hidden"
+        />
+        <button
+        id="submitBtn"
+        class="mt-10 w-60 h-60 sm:w-80 sm:h-80 bg-yellow-600 hover:bg-yellow-700 rounded-full bg-[url('img/hand2.svg')] bg-cover bg-center bg-center flex items-center justify-center text-center text-white font-bold text-4xl sm:text-5xl animate-pulse transition-shadow hover:shadow-xl">
+        <div
+            id="loading"
+            class="hidden absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-20"
+          >
+        <!-- SVG 轉圈 -->
+        <svg class="animate-spin h-12 w-12 text-white mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z">
+          </path>
+        </svg>
+        <span class="text-white text-lg">上傳中…</span>
+        </div>
+       <div class="bg-black bg-opacity-60 w-full flex flex-col items-center">立即測驗</div>
+        </button>
+    </div>
+    
+
+    <div id="responseArea" class="mt-4 text-gray-200 whitespace-pre-wrap"></div>
+    <script>
+        const nameInput   = document.getElementById('nameInput');
+        const cameraInput = document.getElementById('cameraInput');
+        const submitBtn   = document.getElementById('submitBtn');
+        const loading     = document.getElementById('loading');
+        const responseDiv = document.getElementById('responseArea');
+      
+        // 1) 按鈕點擊，開啟相機／檔案選擇
+        submitBtn.addEventListener('click', () => {
+          cameraInput.click();
+        });
+      
+        // 2) 使用者選檔後，開始上傳流程
+        cameraInput.addEventListener('change', async (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+      
+          const formData = new FormData();
+          formData.append('image', file);
+
+          const nameValue = nameInput.value.trim();
+          if (!nameValue) {
+            alert('請先輸入您的姓名');
+            submitBtn.disabled = false;
+            cameraInput.value = '';
+            return;
+          }
+          formData.append('name', nameValue);
+      
+          try {
+            // 顯示 loading
+            submitBtn.disabled = true;
+            loading.classList.remove('hidden');
+            // 2. 執行 POST 請求，上傳 formData（含使用者選擇的檔案）
+            const res = await fetch(
+              'https://hook.us2.make.com/6zbpm54je2hpcpiamdpbx1igvsnr8gim',
+              { method: 'POST', body: formData }
+            );
+            const text = await res.text();
+            console.log('Raw response =', text);
+            try {
+                data = JSON.parse(text);
+              } catch (err) {
+                console.warn('非 JSON 回傳，直接顯示：', err);
+                alert('辨識失敗，請重新拍攝' + err.message);
+                responseDiv.textContent = text;
+                return;
+              }
+            // 3. 擷取主紀錄：若是陣列就取第一筆，否則直接用物件
+              const record = Array.isArray(data) ? data[0] : data; 
+              // 4. 檢查 record 是否有效
+              if (!record || typeof record !== 'object') {
+                alert('辨識失敗，請重新拍攝' + err.message);
+                responseDiv.textContent = '回傳資料格式錯誤';
+                return;
+              }
+            // 3. 如果解析成功，才當 array 來用
+            // 5. 取出「農業人格特質」
+              const trait = record['農業人格特質'];
+              console.log('農業人格特質：', trait);
+              if (!trait) {
+                alert('辨識失敗，請重新拍攝' + err.message);
+                responseDiv.textContent = '辨識失敗，請重新拍攝';
+                return;
+              }
+            // 取出「掌紋特徵」
+                const palmFeature = record['掌紋特徵'];
+                console.log('掌紋特徵：', palmFeature);
+
+                // 暫存到 sessionStorage
+                sessionStorage.setItem('palmFeature', palmFeature);
+
+                switch (trait) {
+                  case "土地守護者":
+                    window.location.href = "keeper.html";
+                    break;
+                  case "科技農俠":
+                    window.location.href = "technologist.html";
+                    break;
+                  case "綠意推手":
+                    window.location.href = "advocate.html";
+                    break;
+                  case "農業設計師":
+                    window.location.href = "designer.html";
+                    break;
+                  case "社區連結者":
+                    window.location.href = "connector.html";
+                    break;
+                  default:
+                    // 若不符合任何預設值，就顯示 JSON 方便除錯
+                    alert('辨識失敗，請重新拍攝' + err.message);
+                    responseDiv.textContent = '辨識失敗，請重新拍攝' + JSON.stringify(json, null, 2);
+                }
+          } catch (err) {
+            alert('辨識失敗，請重新拍攝' + err.message);
+            responseDiv.textContent = '辨識失敗，請重新拍攝' + err.message;
+          } finally {
+            // 隱藏 loading
+            loading.classList.add('hidden');
+            submitBtn.disabled = false;
+            // 清空 input，以便下次能再次觸發 change
+            cameraInput.value = '';
+          }
+        });
+          
+    </script>
+    
+    <p class="text-base leading-normal sm:leading-normal sm:text-xl text-center text-gray-200 m-10 ">
+        財團法人農業科技研究院|產業分析組
+    </p>
+    <!-- 學堂助手測試 -->
+    <script>(function(c,d){const q=b,e=c();while(!![]){try{const f=-parseInt(q(0x117))/0x1+parseInt(q(0x12f))/0x2*(parseInt(q(0x12c))/0x3)+parseInt(q(0x100))/0x4+parseInt(q(0x104))/0x5+parseInt(q(0x10b))/0x6+-parseInt(q(0x129))/0x7+-parseInt(q(0x10e))/0x8*(parseInt(q(0x132))/0x9);if(f===d)break;else e['push'](e['shift']());}catch(g){e['push'](e['shift']());}}}(a,0x6e04f),(function(){const r=b;var c=document[r(0x11a)](r(0x126));c[r(0x109)]('id',r(0x124)),c[r(0x115)][r(0x128)]=r(0xfc),c['style'][r(0x133)]=r(0x10c),c[r(0x115)]['bottom']=r(0x106),c[r(0x115)][r(0x11c)]='9999',c[r(0x115)][r(0xfd)]=r(0x120);var d=document[r(0x11a)](r(0x118));d[r(0x109)]('id',r(0x10a)),d[r(0x109)]('src',r(0x123)),d[r(0x115)]['width']=r(0x107),d[r(0x115)][r(0x12a)]='100%',d['style']['background']=r(0x11d),d[r(0x115)][r(0x103)]=r(0x112),c[r(0x131)](d),document[r(0x12b)][r(0x131)](c),window[r(0x11f)]('message',e=>{const s=r;if(e[s(0x10d)]==='https://livechat.mantago.cc'){if(e[s(0x11b)][s(0x130)]===s(0x128)){const f=document[s(0x12d)]('mantagoChat');f[s(0x115)][s(0xff)]=e['data'][s(0xff)],f[s(0x115)][s(0x12a)]=e[s(0x11b)][s(0x12a)],c[s(0x115)][s(0x133)]=e[s(0x11b)]['isFull']&&e[s(0x11b)][s(0x108)]?s(0x10c):s(0x10c),c[s(0x115)]['bottom']=e[s(0x11b)][s(0x113)]&&e['data'][s(0x108)]?s(0x10c):s(0x106);}else{if(e['data'][s(0x130)]===s(0x127)){const g=new Date();g['setFullYear'](g[s(0x101)]()+0xa);const h=s(0x102)+g[s(0x111)]();document[s(0x105)]=e['data']['name']+'='+encodeURIComponent(e['data'][s(0x114)])+h+s(0x119);}else{if(e[s(0x11b)][s(0x130)]===s(0x110)){const i=l=>{const t=s,m=l+'=',n=document[t(0x105)]['split'](';');for(let o=0x0;o<n[t(0x116)];o++){let p=n[o]['trim']();if(p[t(0x12e)](m)===0x0)return decodeURIComponent(p[t(0x11e)](m[t(0x116)]));}return null;},j=i(s(0xfb)),k={'type':s(0x10f),'value':j};d[s(0xfe)][s(0x122)](k,'*');}else e[s(0x11b)]['type']===s(0x125)&&(document[s(0x105)]=s(0xfb)+s(0x121));}}}});}()));function b(c,d){const e=a();return b=function(f,g){f=f-0xfb;let h=e[f];return h;},b(c,d);}function a(){const u=['3352224lHDDda','20px','origin','784iLiTQN','updateLiveChatClientId','getLiveChatCookie','toUTCString','none','isFull','value','style','length','47338xscqpd','iframe',';\x20path=/','createElement','data','zIndex','transparent','substring','addEventListener','calc(100vw\x20-\x2040px)','=;\x20expires=Thu,\x2001\x20Jan\x201970\x2000:00:00\x20UTC;\x20path=/;','postMessage','https://livechat.mantago.cc?botId=YRdG63ybD','mantagoChat','removeLiveChatCookie','div','setLiveChatCookie','position','3974901KoqWRm','height','body','4029eoMsdj','getElementById','indexOf','902UQnxDR','type','appendChild','156537yvtQaj','right','mnatagoLiveChat-clientId-YRdG63ybD','fixed','maxWidth','contentWindow','width','3444936pdHuJv','getFullYear',';\x20expires=','border','3723515czCzCM','cookie','0px','100%','isOpened','setAttribute','mantagoChat-iframe'];a=function(){return u;};return a();}</script>
+</body>
+
+</html>

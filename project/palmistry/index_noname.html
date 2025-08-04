@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神農之手-AI掌紋判讀</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body class="bg-[url('img/back4.svg')] bg-cover bg-no-repeat bg-center min-h-screen flex flex-col items-center p-4 mt-10">
+    <h1 class="text-5xl leading-normal sm:leading-normal sm:text-6xl font-extrabold text-center text-gray-100 font-extrabold"
+        style="font-family:'LXGW WenKai Mono TC', monospace; 
+        text-shadow:
+        0px 0px 4px rgb(22, 22, 1),
+        0px 0px 8px rgba(68, 68, 2, 0.829),
+        0px 0px 8px rgba(255, 255, 0, 0.925);">
+        神農之手<br>AI掌紋判讀
+    </h1>
+    <h2 class="text-2xl sm:text-3xl leading-normal sm:leading-normal sm:text-2xl text-center text-gray-200 m-2 drop-shadow-lg "
+        style="font-family:'LXGW WenKai Mono TC', monospace;">
+        從掌紋看你是哪類農業達人？
+    </h2>
+    <div class="bg-black bg-opacity-50 m-2 w-full max-w-3xl mx-auto flex flex-col items-center p-10">
+
+        <p class="text-3xl leading-normal sm:leading-normal sm:text-4xl text-center text-gray-200 ">
+            一張照片，揭開你的農業達人之路，探索屬於你的耕耘潛力
+        </p>
+        <input
+        type="file"
+        id="cameraInput"
+        accept="image/*"
+        capture="environment"
+        class="hidden"
+        />
+        <button
+        id="submitBtn"
+        class="mt-10 w-60 h-60 sm:w-80 sm:h-80 bg-yellow-600 hover:bg-yellow-700 rounded-full bg-[url('img/hand2.svg')] bg-cover bg-center bg-center flex items-center justify-center text-center text-white font-bold text-4xl sm:text-5xl animate-pulse transition-shadow hover:shadow-xl">
+        <div
+            id="loading"
+            class="hidden absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-20"
+          >
+        <!-- SVG 轉圈 -->
+        <svg class="animate-spin h-12 w-12 text-white mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z">
+          </path>
+        </svg>
+        <span class="text-white text-lg">上傳中…</span>
+        </div>
+       <div class="bg-black bg-opacity-60 w-full flex flex-col items-center">立即測驗</div>
+        </button>
+    </div>
+    
+
+    <div id="responseArea" class="mt-4 text-gray-200 whitespace-pre-wrap"></div>
+    <script>
+        const cameraInput = document.getElementById('cameraInput');
+        const submitBtn   = document.getElementById('submitBtn');
+        const loading     = document.getElementById('loading');
+        const responseDiv = document.getElementById('responseArea');
+      
+        // 1) 按鈕點擊，開啟相機／檔案選擇
+        submitBtn.addEventListener('click', () => {
+          cameraInput.click();
+        });
+      
+        // 2) 使用者選檔後，開始上傳流程
+        cameraInput.addEventListener('change', async (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+      
+          const formData = new FormData();
+          formData.append('image', file);
+      
+          try {
+            // 顯示 loading
+            submitBtn.disabled = true;
+            loading.classList.remove('hidden');
+            // 2. 執行 POST 請求，上傳 formData（含使用者選擇的檔案）
+            const res = await fetch(
+              'https://hook.us2.make.com/6zbpm54je2hpcpiamdpbx1igvsnr8gim',
+              { method: 'POST', body: formData }
+            );
+            const text = await res.text();
+            console.log('Raw response =', text);
+            try {
+                data = JSON.parse(text);
+              } catch (err) {
+                console.warn('非 JSON 回傳，直接顯示：', err);
+                responseDiv.textContent = text;
+                return;
+              }
+            // 3. 擷取主紀錄：若是陣列就取第一筆，否則直接用物件
+              const record = Array.isArray(data) ? data[0] : data; 
+              // 4. 檢查 record 是否有效
+              if (!record || typeof record !== 'object') {
+                responseDiv.textContent = '回傳資料格式錯誤';
+                return;
+              }
+            // 3. 如果解析成功，才當 array 來用
+            // 5. 取出「農業人格特質」
+              const trait = record['農業人格特質'];
+              console.log('農業人格特質：', trait);
+              if (!trait) {
+                responseDiv.textContent = '辨識失敗，請重新拍攝';
+                return;
+              }
+            // 取出「掌紋特徵」
+                const palmFeature = record['掌紋特徵'];
+                console.log('掌紋特徵：', palmFeature);
+
+                // 暫存到 sessionStorage
+                sessionStorage.setItem('palmFeature', palmFeature);
+
+                switch (trait) {
+                  case "土地守護者":
+                    window.location.href = "keeper.html";
+                    break;
+                  case "科技農俠":
+                    window.location.href = "technologist.html";
+                    break;
+                  case "綠意推手":
+                    window.location.href = "advocate.html";
+                    break;
+                  case "農業設計師":
+                    window.location.href = "designer.html";
+                    break;
+                  case "社區連結者":
+                    window.location.href = "connector.html";
+                    break;
+                  default:
+                    // 若不符合任何預設值，就顯示 JSON 方便除錯
+                    responseDiv.textContent = '辨識失敗，請重新拍攝' + JSON.stringify(json, null, 2);
+                }
+          } catch (err) {
+            responseDiv.textContent = '辨識失敗，請重新拍攝' + err.message;
+          } finally {
+            // 隱藏 loading
+            loading.classList.add('hidden');
+            submitBtn.disabled = false;
+            // 清空 input，以便下次能再次觸發 change
+            cameraInput.value = '';
+          }
+        });
+          
+    </script>
+    
+    <p class="text-base leading-normal sm:leading-normal sm:text-xl text-center text-gray-200 m-10 ">
+        財團法人農業科技研究院|產業分析組
+    </p>
+</body>
+
+</html>
