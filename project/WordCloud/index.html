@@ -1,81 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+  <meta charset="UTF-8">
+  <title>農業重點關鍵字雲</title>
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+  <style>
+    #chartdiv {
+      width: 100%;
+      height: 600px;
+    }
+  </style>
 </head>
 <body>
-<!-- Styles -->
-<style>
-#chartdiv {
-  width: 100%;
-  height: 500px;
-}
-</style>
+  <h2>農業重點關鍵字雲</h2>
+  <div id="chartdiv"></div>
 
-<!-- Resources -->
-<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/wc.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script>
+    const SHEET_URL =
+      "https://docs.google.com/spreadsheets/d/1xPXe4CnkArTB6bPoCnfqXeKAhvginDJ0Caakyv3fr3E/gviz/tq?tqx=out:json&tq=select%20F,G";
 
-<!-- Chart code -->
-<script>
-am5.ready(function() {
+    am4core.useTheme(am4themes_animated);
 
+    // 建立 WordCloud 圖表
+    let chart = am4core.create("chartdiv", am4plugins_wordCloud.WordCloud);
+    let series = chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
 
-// Create root element
-// https://www.amcharts.com/docs/v5/getting-started/#Root_element
-var root = am5.Root.new("chartdiv");
+    // 欄位對應
+    series.dataFields.word = "word";
+    series.dataFields.value = "weight";
 
+    // 所有文字水平排列
+    series.angles = [0];
+    series.rotationThreshold = 1;
+    series.randomness = 0.1;
+    series.accuracy = 5;
 
-// Set themes
-// https://www.amcharts.com/docs/v5/concepts/themes/
-root.setThemes([
-  am5themes_Animated.new(root)
-]);
+    // 顏色設定
+    series.colors = new am4core.ColorSet();
+    series.colors.list = [
+      am4core.color("#ff8a65"),
+      am4core.color("#fbc02d"),
+      am4core.color("#4caf50"),
+      am4core.color("#42a5f5"),
+      am4core.color("#7e57c2")
+    ];
+    series.colors.passOptions = {};
+    series.colors.reuse = true;
 
-var zoomableContainer = root.container.children.push(
-  am5.ZoomableContainer.new(root, {
-    width: am5.p100,
-    height: am5.p100,
-    wheelable: true,
-    pinchZoom: true
-  })
-);
+    // 樣式設定
+    series.labels.template.tooltipText = "{word}: {value}";
+    series.fontFamily = "Arial";
+    series.minFontSize = 12;
+    series.maxFontSize = 80;
 
-var zoomTools = zoomableContainer.children.push(am5.ZoomTools.new(root, {
-  target: zoomableContainer
-}));
+    // 紀錄上一筆資料
+    let lastData = [];
 
+    async function fetchWords() {
+      try {
+        const response = await fetch(SHEET_URL);
+        const text = await response.text();
 
-// Add series
-// https://www.amcharts.com/docs/v5/charts/word-cloud/
-var series = zoomableContainer.contents.children.push(am5wc.WordCloud.new(root, {
-  maxCount:100,
-  minWordLength:2,
-  maxFontSize:am5.percent(35),
-  text: "Though yet of Hamlet our dear brother's death The memory be green, and that it us befitted To bear our hearts in grief and our whole kingdom To be contracted in one brow of woe, Yet so far hath discretion fought with nature That we with wisest sorrow think on him, Together with remembrance of ourselves. Therefore our sometime sister, now our queen, The imperial jointress to this warlike state, Have we, as 'twere with a defeated joy,-- With an auspicious and a dropping eye, With mirth in funeral and with dirge in marriage, In equal scale weighing delight and dole,-- Taken to wife: nor have we herein barr'd Your better wisdoms, which have freely gone With this affair along. For all, our thanks. Now follows, that you know, young Fortinbras, Holding a weak supposal of our worth, Or thinking by our late dear brother's death Our state to be disjoint and out of frame, Colleagued with the dream of his advantage, He hath not fail'd to pester us with message, Importing the surrender of those lands Lost by his father, with all bonds of law, To our most valiant brother. So much for him. Now for ourself and for this time of meeting: Thus much the business is: we have here writ To Norway, uncle of young Fortinbras,-- Who, impotent and bed-rid, scarcely hears Of this his nephew's purpose,--to suppress His further gait herein; in that the levies, The lists and full proportions, are all made Out of his subject: and we here dispatch You, good Cornelius, and you, Voltimand, For bearers of this greeting to old Norway; Giving to you no further personal power To business with the king, more than the scope Of these delated articles allow. Farewell, and let your haste commend your duty. Tis sweet and commendable in your nature, Hamlet,To give these mourning duties to your father: But, you must know, your father lost a father; That father lost, lost his, and the survivor bound In filial obligation for some term To do obsequious sorrow: but to persever In obstinate condolement is a course Of impious stubbornness; 'tis unmanly grief; It shows a will most incorrect to heaven, A heart unfortified, a mind impatient, An understanding simple and unschool'd: For what we know must be and is as common As any the most vulgar thing to sense, Why should we in our peevish opposition Take it to heart? Fie! 'tis a fault to heaven, A fault against the dead, a fault to nature, To reason most absurd: whose common theme Is death of fathers, and who still hath cried, From the first corse till he that died to-day, 'This must be so.' We pray you, throw to earth This unprevailing woe, and think of us As of a father: for let the world take note, You are the most immediate to our throne; And with no less nobility of love Than that which dearest father bears his son, Do I impart toward you. For your intent In going back to school in Wittenberg, It is most retrograde to our desire: And we beseech you, bend you to remain Here, in the cheer and comfort of our eye, Our chiefest courtier, cousin, and our son.",
-}));
+        // 解析 Google Sheets JSON
+        const match = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\);/);
+        if (!match) throw new Error("無法解析 Google Sheets JSON");
+        const json = JSON.parse(match[1]);
 
+        // 假設 F欄=文字，G欄=權重
+        const wordList = json.table.rows
+          .map(r => {
+            const word = r.c[0]?.v;
+            const weight = parseInt(r.c[1]?.v || 10);
+            return word ? { word, weight } : null;
+          })
+          .filter(Boolean);
 
-// Configure labels
-series.labels.template.setAll({
-  paddingTop: 5,
-  paddingBottom: 5,
-  paddingLeft: 5,
-  paddingRight: 5,
-  fontFamily: "Courier New"
-});
+        // 如果資料完全相同，跳過更新
+        if (JSON.stringify(wordList) === JSON.stringify(lastData)) {
+          console.log("資料未變，跳過更新");
+          return;
+        }
 
-}); // end am5.ready()
-</script>
+        // 資料筆數相同 → 平滑更新
+        if (series.data.length === wordList.length) {
+          series.data.forEach((item, idx) => {
+            item.word = wordList[idx].word;
+            item.weight = wordList[idx].weight;
+          });
+          series.invalidateRawData();
+          console.log("資料筆數相同 → 平滑更新");
+        } else {
+          // 筆數不同 → 重建資料
+          series.data = wordList;
+          console.log("資料筆數不同 → 完整重建");
+        }
 
-<!-- HTML -->
-<div id="chartdiv"></div>
+        // 更新最後資料
+        lastData = wordList;
+
+      } catch (e) {
+        console.error("讀取或解析失敗：", e);
+      }
+    }
+
+    // 初次載入 & 每 3 秒更新
+    fetchWords();
+    setInterval(fetchWords, 3000);
+  </script>
 </body>
 </html>
