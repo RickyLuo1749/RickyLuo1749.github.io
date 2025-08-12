@@ -14,7 +14,8 @@
       height: 100vh;
       overflow: hidden; /* 避免捲軸 */
       font-family: Arial, sans-serif;
-      background: linear-gradient(197deg, #3ccfbc 0%, #0156cd 100%);
+      background: url("back.jpg") no-repeat center center fixed;
+      background-size: cover; /* 讓圖片自適應全螢幕 */
     }
 
     /* 外層容器，左右兩區塊 */
@@ -43,23 +44,26 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* 文字在上、圖片在下 */
-      padding: 20px;
+      align-items: flex-start;
+      /* justify-content: space-between; 文字在上、圖片在下 */
+
+      gap: 80px;
       box-sizing: border-box;
-      border: 5px solid #ffffff; /* 白色邊框 */
+      margin-right: 5%;
+      margin-top: 3%;
     }
 
     .right-text {
-      font-size: 32px;
-      color: #ffffff;
+      font-size: 48px;
+      text-align: justify; /* 文字兩端對齊 */
+      color: #000000bc;
     }
 
     .right-image {
       width: 80%;
       display: flex;
-      align-self: center;  /* 靠右 */
-      margin-bottom: 30px;   /* 與底部留距離 */
-
+      align-self: center; 
+      justify-content: center; /* 圖片置中 */
     }
 
     .right-image img {
@@ -69,8 +73,8 @@
     h1 {
       text-align: center;
       padding-top: 1%;
-      font-size: 60px;
-      color: #ffffff;
+      font-size: 80px;
+      color: #000000bc;
       text-shadow: 2px 4px 12px rgba(0,0,0,0.18), 0 1px 0 #fff;
       animation: h1-glow 2.5s ease-in-out infinite alternate;
     }
