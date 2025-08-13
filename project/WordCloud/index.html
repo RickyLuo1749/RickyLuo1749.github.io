@@ -8,19 +8,103 @@
   <script src="https://cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
   <style>
-    #chartdiv {
-      width: 100%;
-      height: 600px;
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden; /* 避免捲軸 */
+      font-family: Arial, sans-serif;
+      background: url("back.jpg") no-repeat center center fixed;
+      background-size: cover; /* 讓圖片自適應全螢幕 */
     }
+
+    /* 外層容器，左右兩區塊 */
+    .container {
+      display: flex;
+      width: 100%;
+      height: 85vh; /* 佔滿整個視窗高度 */
+    }
+
+    /* 左側文字雲 */
+    .left {
+      flex: 4;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    /* amCharts 文字雲容器 */
+    #chartdiv {
+      flex: 1;
+      width: 100%;
+    }
+
+    /* 右側文字 + 圖片 */
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* justify-content: space-between; 文字在上、圖片在下 */
+
+      gap: 80px;
+      box-sizing: border-box;
+      margin-right: 5%;
+      margin-top: 3%;
+    }
+
+    .right-text {
+      font-size: 32px;
+      text-align: justify; /* 文字兩端對齊 */
+      color: #000000bc;
+    }
+
+    .right-image {
+      width: 80%;
+      display: flex;
+      align-self: center; 
+      justify-content: center; /* 圖片置中 */
+    }
+
+    .right-image img {
+      max-width: 100%;
+      height: auto;
+    }
+    h1 {
+      text-align: center;
+      padding-top: 0%;
+      font-size: 60px;
+      color: #05116ad7;
+      text-shadow: 2px 4px 12px rgba(0,0,0,0.18), 0 1px 0 #fff;
+      animation: h1-glow 2.5s ease-in-out infinite alternate;
+    }
+
   </style>
 </head>
 <body>
-  <h2>農業重點關鍵字雲</h2>
-  <div id="chartdiv"></div>
+  <h1>農業重點關鍵字雲</h1>
+  <div class="container">
+    
+    <!-- 左側文字雲 -->
+    <div class="left">
+      <div id="chartdiv"></div>
+    </div>
+
+    <!-- 右側文字與圖片 -->
+    <div class="right">
+      <div class="right-text">
+      掃描QRcode，填寫3個對於「人工智慧（AI）在農業應用」的第一印象或最關注的議題
+
+      </div>
+      <div class="right-image">
+        <img src="wordcloud-qr-code.png" alt="右下角圖片">
+      </div>
+    </div>
+  </div>
 
   <script>
     const SHEET_URL =
-      "https://docs.google.com/spreadsheets/d/1xPXe4CnkArTB6bPoCnfqXeKAhvginDJ0Caakyv3fr3E/gviz/tq?tqx=out:json&tq=select%20F,G";
+      "https://docs.google.com/spreadsheets/d/1xPXe4CnkArTB6bPoCnfqXeKAhvginDJ0Caakyv3fr3E/gviz/tq?tqx=out:json&tq=select%20D,E";
 
     am4core.useTheme(am4themes_animated);
 
@@ -35,25 +119,27 @@
     // 所有文字水平排列
     series.angles = [0];
     series.rotationThreshold = 1;
-    series.randomness = 0.1;
-    series.accuracy = 5;
+    series.randomness = 0.3; // 文字隨機程度
+    series.accuracy = 1;
 
     // 顏色設定
     series.colors = new am4core.ColorSet();
     series.colors.list = [
-      am4core.color("#ff8a65"),
-      am4core.color("#fbc02d"),
-      am4core.color("#4caf50"),
-      am4core.color("#42a5f5"),
-      am4core.color("#7e57c2")
+      am4core.color("#FF6B6B"), // 鮮紅
+      am4core.color("#FFA500"), // 亮橘
+      am4core.color("#FFD93D"), // 亮黃
+      am4core.color("#6A4C93"), // 深紫
+      am4core.color("#1E3A8A"), // 深藍
+      am4core.color("#2E8B57")  // 深綠
     ];
     series.colors.passOptions = {};
     series.colors.reuse = true;
 
+
     // 樣式設定
     series.labels.template.tooltipText = "{word}: {value}";
     series.fontFamily = "Arial";
-    series.minFontSize = 12;
+    series.minFontSize = 18;
     series.maxFontSize = 80;
 
     // 紀錄上一筆資料
